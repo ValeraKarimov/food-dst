@@ -43,7 +43,7 @@ const deadline = '2020-09-21';
 function getTimeRemaining(endtime) {
   const t = Date.parse(endtime) - Date.parse(new Date());
   const days = Math.floor(t / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((t / 1000 * 60 * 60) % 24);
+  const hours = Math.floor((t / (1000 * 60 * 60) % 24));
   const minutes = Math.floor((t / 1000 / 60) % 60);
   const seconds = Math.floor((t / 1000) % 60);
 
@@ -90,3 +90,37 @@ function setClock(selector, endtime) {
 
 setClock('.timer', deadline);
 
+// Modal
+
+const modalTrigger = document.querySelectorAll('[data-modal]');
+const modal = document.querySelector('.modal');
+const modalCloseBtn = document.querySelector('[data-close]');
+
+modalTrigger.forEach(btn => {
+  btn.addEventListener('click', () => {
+    modal.classList.add('show');
+    modal.classList.remove('hide');
+    document.body.style.overflow = 'hidden';
+  });
+})
+
+function closeModal() {
+  modal.classList.add('hide');
+  modal.classList.remove('show');
+  document.body.style.overflow = '';  
+}
+
+modalCloseBtn.addEventListener('click', closeModal);
+
+
+modal.addEventListener('click', (e) => {
+  if(e.target === modal) {
+    closeModal();
+  }
+})
+
+document.addEventListener('keydown', (e) => {
+  if(e.code === 'Escape' && modal.classList.contains('show')) {
+    closeModal();
+  }
+})
