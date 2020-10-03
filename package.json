@@ -1,23 +1,27 @@
 {
-  "name": "food-dist",
+  "name": "Food-dist",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "json-server": "^0.16.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ValeraKarimov/food-dst.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ValeraKarimov/food-dst/issues"
   },
-  "homepage": "https://github.com/ValeraKarimov/food-dst#readme",
-  "devDependencies": {
-    "json-server": "^0.16.1"
-  }
+  "homepage": "https://github.com/ValeraKarimov/food-dst#readme"
 }
