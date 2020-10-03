@@ -1,3 +1,5 @@
+import {getResourse} from '../services/services';
+
 function cards() {
 // Use classes for cards
 
@@ -41,16 +43,6 @@ class MenuCard {
   }
 }
 
-const getResourse = async (url) => {
-  const res = await fetch(url);
-
-  if(!res.ok) {
-    throw new Error(`could not fetch ${url}, status: ${res.status}`);
-  }
-
-  return await res.json();
-}
-
 // getResourse('http://localhost:3000/menu')
 //   .then(data => {
 //     data.forEach(({ img, altimg, title, descr, price }) => {
@@ -66,4 +58,4 @@ axios.get('http://localhost:3000/menu')
   });
 }
 
-module.exports = cards;
+export default cards;
