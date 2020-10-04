@@ -1,3 +1,8 @@
+require('es6-promise').polyfill();
+import 'nodelist-foreach-polyfill';
+
+// import 'slick-slider';
+
 import calc from './modules/calc';
 import cards from './modules/cards';
 import forms from './modules/forms';
